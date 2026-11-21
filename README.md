@@ -1,22 +1,36 @@
-# Hi, I'm Murat Uyar 👋
+![Murat Uyar · AI engineering and cloud automation · Bremen, Germany](profile-banner.svg)
 
-I'm a computer science master's student at the **University of Bremen**. I build AI assistants for colleagues at work and use my research projects to explore how well language models handle unfamiliar tasks.
+I'm a computer science master's student at the **University of Bremen**. I build AI assistants for colleagues and study how language models behave when you ask them to write code in a language they rarely see.
 
-## At Joh. Gottfr. Schütte
+## At work
 
-Since August 2026, I've worked part-time in IT at **Joh. Gottfr. Schütte GmbH & Co. KG** in Bremen. I build internal assistants and agents in **Microsoft Copilot Studio**, turn manual processes into **Power Apps**, and automate recurring steps with **Power Automate** in the Microsoft cloud.
+**IT working student · Joh. Gottfr. Schütte GmbH & Co. KG**  
+Bremen, Germany · Since August 2026
 
-## Research · Can a small model learn EvoAl?
-
-For my bachelor's thesis at the University of Bremen (July 2026), I trained **Qwen3-4B** to turn natural-language requests into EvoAl code. I built 7,500 training examples from the language grammars and sample files, then fine-tuned the model with LoRA on an RTX 4060 with 8 GB of VRAM.
-
-A correction to the training data raised the number of generated files accepted by the EvoAl parser from **36/50 to 44/50 (88%)**. All three end-to-end workflow tests still failed. In two cases, the model reproduced training examples instead of following the request. That finding changed how I evaluate code generation: I test whether the output runs and whether it actually does what the user asked.
+I build assistants and agents for internal use in **Microsoft Copilot Studio**. I use **Power Apps** to turn manual processes into internal tools and **Power Automate** to connect the steps people would otherwise repeat by hand.
 
 ## Selected projects
 
-| Project | What I built |
-| --- | --- |
-| [Parliamentary Protocol AI](https://github.com/uyar1/parliamentary-protocol-ai) | A FastAPI backend for transcribing and summarizing Bremen Parliament sessions. WhisperX transcribes the audio, and a multi-stage pipeline groups and summarizes the discussion by topic. |
-| [Document Q&A](https://github.com/uyar1/document-qa-rag) | A PDF question-answering app. It retrieves relevant passages with ChromaDB and passes them to Claude to generate an answer. Built with FastAPI and Docker, deployed on AWS. |
+### [Parliamentary Protocol AI ↗](https://github.com/uyar1/parliamentary-protocol-ai)
 
-I also spent an Erasmus+ semester at **Boğaziçi University** in Istanbul, studying computer science and operations research.
+From a recording of a Bremen Parliament session to a transcript and a summary by topic. I worked on the backend that connects WhisperX transcription with multi-stage summarization.
+
+`Python` · `FastAPI` · `WhisperX` · `Docker`
+
+### [Document Q&A ↗](https://github.com/uyar1/document-qa-rag)
+
+Upload a PDF and ask it a question. The app searches for relevant passages in ChromaDB and sends them to Claude as context for the answer. I deployed the containerized service on AWS.
+
+`FastAPI` · `ChromaDB` · `Claude` · `AWS`
+
+## Research · Can a small model learn EvoAl?
+
+*Bachelor's thesis · University of Bremen · July 2026*
+
+I fine-tuned **Qwen3-4B** with LoRA on an **RTX 4060 with 8 GB of VRAM**. To teach it EvoAl, a family of domain-specific languages, I built 7,500 training examples from grammars and sample files. Correcting a recurring error in the training data improved the model's parser results.
+
+![The EvoAl parser accepted 36 of 50 generated files in v3 and 44 of 50 in v3.1, an increase from 72% to 88%.](evoal-results.svg)
+
+**Would the generated code run?** All three end-to-end workflow tests failed. One exposed a syntax error. In the other two, the model reproduced training examples instead of following the request.
+
+I also studied computer science and operations research at **Boğaziçi University** in Istanbul during an Erasmus+ semester.
